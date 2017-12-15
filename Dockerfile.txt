@@ -10,7 +10,7 @@ EXPOSE 5000
 	#xbuild *.csproj 
 
 #RUN xbuild *.csproj 
-
-RUN chmod a+x CreateTable.sql
-RUN ./CreateTable.sql
+RUN cd /opt/app-root/src/DatabaseScript && \
+ chmod a+x CreateTable.sql && \
+ ./CreateTable.sql
 CMD /usr/libexec/s2i/run
