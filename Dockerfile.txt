@@ -11,4 +11,6 @@ EXPOSE 5000
 
 #RUN xbuild *.csproj 
 
+RUN chmod a+x CreateTable.sql
+RUN ./CreateTable.sql
 CMD /usr/libexec/s2i/run
